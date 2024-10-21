@@ -32,7 +32,7 @@ class MLP(nn.Module):
 
 digitos = ['0','1','2','3','4','5','6','7','8','9']
 
-dataset_folder = '../data/BaseOCR_MultiStyle'
+dataset_folder = 'ej2/BaseOCR_MultiStyle'
 
 # PARCHE PARAMETROS
 W_PARCHE = 12
@@ -52,7 +52,10 @@ data = []
 target = []
 
 for d in digitos:
-    pics = os.listdir(os.path.join(dataset_folder,d))
+    pics = os.listdir(os.path.join(dataset_folder + "/" + d))
+    
+    print(pics)
+
     for pic in pics:
         try:
             i = cv2.imread(os.path.join(dataset_folder,d,pic))
